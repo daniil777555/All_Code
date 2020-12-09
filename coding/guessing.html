@@ -1,0 +1,54 @@
+<meta charset="utf-8">
+<script type="text/javascript">
+	
+	function ask(question, answer){
+		userAns = prompt(question);
+		userAns = userAns.toLowerCase();
+
+	for(var i = 0; i < answer.length; i++){	
+		if(userAns == answer[i]){
+			alert("It's right");
+			score++
+			return;
+		} 
+			
+		}
+		alert("U didn't guess");
+	}
+
+	var score = 0
+
+	ask('What can u see with close eyes?', ["dream"]);
+	ask('A $ 1 bat is more expensive than a baseball, the total cost is $ 1.10, how much is a bat ?', ["1.05", "1.05$", "1,05", "1,05$", "1,05 $", "1.05 $", "one dollar and five cents", "one dollar five cents", "dollar and five cents"]);
+
+	/* userAns = userAns.toLowerCase();
+	if(userAns == "dream"){
+		alert("It's right");
+		score++
+	}
+	else 
+		alert("U didn't guess");*/
+
+	
+	
+
+	/* userAns = userAns.toLowerCase();
+	if(userAns == "1.05" || userAns == "1.05$" || userAns == "1,05" || userAns == "1,05$" || userAns == "1,05 $" || userAns == "1.05 $" || userAns == "one dollar and five cents" || userAns == "one dollar five cents" || userAns == "dollar and five cents"){
+		alert("It's right");
+		score++
+	}
+	else 
+		alert("U didn't guess");*/
+
+	//var userAnswer = ['What can u see with close eyes?', 'A $ 1 bat is more expensive than a baseball, the total cost is $ 1.10, how much is a bat ?']
+
+	//var n1 = ["dream"];
+
+	//var n2 = ["1.05", "1.05$", "1,05", "1,05$", "1,05 $", "1.05 $", "one dollar and five cents", "one dollar five cents", "dollar and five cents"];
+
+	alert(score + " right answer");
+
+
+	
+
+</script>

@@ -1,0 +1,20 @@
+<meta charset="utf-8">
+<script type="text/javascript">
+
+	var p = +prompt("Введи количество символов");
+
+	function getPass(array, length){
+		var array = "";
+		var arrayText = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "a", "b", "c", "d", "e", "f", "g", "h", "i", "i", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
+		for(var i = 0; i < p; i++){
+			array = array + arrayText[random()];
+			
+		} return array;
+	}
+	function random(p){
+		return Math.round(Math.random() * 62);
+	}
+	var array = getPass(p);
+	document.write("Ваш пороль " + getPass(array));
+
+</script>

@@ -1,0 +1,89 @@
+<meta charset="utf-8">
+<script type="text/javascript">
+	
+	function getRandom(min, max){
+		return Math.floor(Math.random() * (max - min + 1)) + min;
+	}
+
+	function getCard(){
+		var cards = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A'];
+		return cards[getRandom(0, cards.length - 1)];
+	}
+
+	function getSum(arr){
+		var sum = 0;
+		parseInt(sum); 
+		for(var i = 0;i < arr.length; i++) {
+			if(arr[i] != 'A'){
+		        if ((arr[i] == "J") || (arr[i] == "Q") || (arr[i] == "K")) {
+		            sum = sum + 10;
+		        }else{
+		        	sum = sum + parseInt(arr[i]);
+		        }
+	    	}
+		}
+
+		for( var i = 0; i < arr.length; i++){
+			if (arr[i] == 'A'){
+				if(sum > 10){
+					sum = sum + 1;
+				}else{
+					sum = sum + 11;
+				}
+			}
+		}
+    	return sum;
+	}
+	function getStatus(){
+		return 'Dealler ' + dealer.join(" ") + ' Summ cards dealer = ' + getSum(dealer) + '  Player: ' + player.join(' ') + ' Summ cards player = ' + getSum(player); 
+	}
+
+
+	var dealer = [getCard()];
+	var player = [getCard(), getCard()];
+
+	if(getSum(player) == 21){
+		alert("Black Jack")
+	} else{
+		var answer = '';
+		do{
+			answer = prompt(getStatus() + " Хочешь ещё карту? 1 - да, иначе - нет");
+
+			if(answer == '1'){
+				player.push(getCard());
+				
+				alert(getStatus());
+				if(getSum(player) > 21){
+					alert('Вы проиграли')
+					break;
+				} else if (getSum(player) == 21) {
+					alert('Вы выиграли')
+					break;
+				} 
+
+				} else{
+					//dealer
+					while (getSum(dealer) < 18) {
+						dealer.push(getCard())						
+					}
+
+					if(getSum(dealer) == 21){
+						alert('Dealer have Black Jack ' + getStatus());
+					} else if(getSum(dealer) > 21){
+						alert('Dealer have some more 21 ' + getStatus());
+					} else if(getSum(dealer) == getSum(player)){
+						alert('Draw ' + getStatus());
+					} else if(getSum(dealer) < getSum(player)){
+						alert('You win ' + getStatus());
+					} else {
+						alert('You lose ' + getStatus());
+					}
+				}
+
+		} while (answer == '1');
+	}	
+
+	
+
+
+</script>

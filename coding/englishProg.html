@@ -1,0 +1,63 @@
+<meta charset="utf-8">
+<script type="text/javascript">
+
+	function askForWords(words){
+		while (words.length != 0) {
+		var randNum = parseInt(Math.random() * words.length);
+	var userTrans = prompt('Как переводится слово ' + words[randNum][0]);
+		if(userTrans == words[randNum][1]){
+		alert("Хорошая работа");
+		words.splice(randNum, 1);
+	} else {
+		alert("Не верно. Правильный ответ " + words[randNum][1]);
+	}
+	}
+	alert("Красавчик все выучил");
+	}
+
+	var easywords = [
+		['food', 'еда'],
+		["bike", "велосипед"],
+		["apple", "яблоко"],
+		["do", "делать"],
+		["mean", "иметь ввиду"],
+	];
+
+	askForWords(easywords);
+
+	/* while (words.length != 0) {
+		var randNum = parseInt(Math.random() * words.length);
+	var userTrans = prompt('Как переводится слово ' + words[randNum][0]);
+		if(userTrans == words[randNum][1]){
+		alert("Хорошая работа");
+		words.splice(randNum, 1);
+	} else {
+		alert("Не верно. Правильный ответ " + words[randNum][1]);
+	}
+	}
+	alert("Красавчик все выучил"); */
+
+	var hardwords = [
+		["button", "кнопка"],
+		["hammer", "молоток"],
+		["prison", "тюрьма"],
+		["scissors", "ножницы"],
+		["sewerage", "канализация"],
+		["amount", "количество"]
+	];
+
+	askForWords(hardwords);
+
+	
+
+
+
+
+
+
+
+
+
+
+
+</script>

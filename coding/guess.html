@@ -1,0 +1,22 @@
+<meta charset="utf-8">
+<script type="text/javascript">
+
+	var answer = parseInt(Math.random() * 100);
+
+	while(true) {
+		var userAns = prompt('Guess nomber from 0 to 100\n If u want go out press' + ' q');
+		if(userAns == 'q')
+			break;
+		userAns = parseInt(userAns)
+		if(userAns == answer){
+			alert('Congratulation for u ');
+			break;
+		} else if(userAns > answer){
+			alert('Too high number ');
+		}  else if(userAns < answer){
+			alert('Too low number ');
+		}	
+		}
+	alert('Right answer ' + answer);
+
+</script>

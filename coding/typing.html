@@ -1,0 +1,46 @@
+<meta charset="utf-8">
+<script type="text/javascript">
+
+
+	function generateText (letters, length) {
+		
+		var text = "";
+		for(var i = 0; i < length; i++){
+			var n = getRandomNumber(letters.length - 1);
+			text = text + letters[n];
+		}
+		return text;
+	}
+
+	function getRandomNumber(max){
+		return Math.round(Math.random() * max);
+	}
+
+	function typing(brief, letters, length){
+		while(true){
+		alert(brief);
+		var text = generateText(letters, length);
+		var userText = prompt(text);
+		if(userText == text){
+			alert("Красава. Некст левл");
+			break;
+		} else{
+			alert("Повторяй");
+		}
+	}
+	}
+
+	alert("Здорова");
+
+	var brief = "Положи левую культяпку на клавиши  A S D F.\nТеперь печатай что видишь на мониторе."
+	typing(brief, ["a", "f"], 10);
+
+	typing(brief, ["s", "d"], 10);
+
+	brief = "Положи левую культяпку на клавиши J K L Ж .\nТеперь печатай что видишь на мониторе."
+	typing(brief, ["о", "ж"], 10);
+
+	typing(brief, ["k", "l"], 10);
+	
+
+</script>

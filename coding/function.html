@@ -1,0 +1,59 @@
+<meta charset="utf-8">
+<script type="text/javascript">
+
+	function getArray (n){
+		var array = []
+		for(var i = 1; i <= n; i++){
+		array.push(i);
+	}
+	return array
+	}
+
+	function getPlus (array){
+		var sum = 0;
+		for(var i = 0; i < array.length; i++){
+			sum += array[i];
+		}
+		return sum 
+	}
+	
+	function max(array){
+		var max = array[0];
+		for( var i = 1; i < array.length; i++){
+			if(array[i] > max);
+				max = array[i];
+		}
+		return max;
+	} 
+
+	/* function min(array){
+		var min = array[0];
+		for( var i = 1; i < array.length; i++){  // почему то не работает
+			if(array[i] < min);
+				min = array[i];
+		}
+		return min;
+	} */
+
+	function min(array){
+    	return Math.min.apply(null,array);}
+
+	function getEven (array){
+		var even = []
+		for(var i = 0; i < array.length; i++){
+			if(array[i] % 2 == 0)
+				even.push(array[i])
+		}
+		return even
+	}
+
+	var p = +prompt("Введи количество элиментов")
+	var array = getArray(p);
+	
+	document.write('Последовательность ' + array + '<br>');
+	document.write("Сумма " + getPlus(array) + '<br>');
+	document.write("Максимум " + max(array) + '<br>');
+	document.write("Минимум " + min(array) + '<br>');
+	document.write("Четные числа " + getEven(array) + '<br>'); 
+
+</script>

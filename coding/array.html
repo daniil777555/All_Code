@@ -1,0 +1,41 @@
+<meta charset="utf-8">
+<script type="text/javascript">
+
+
+	function compareAns (userAns, answer) {
+		if(userAns == answer){
+		alert('Верно');
+	} else {
+		alert("А вот и нет. Правильный ответ " + answer);
+	}
+	}
+
+	function getRandomNumber(max) {
+		/*var rand =*/ return Math.round(Math.random() * max)
+		//return rand;
+	}
+
+	
+	var num = [];
+
+	var n = +prompt("Введи количество чисел, которое смог бы угадать");
+	for(var i = 0; i < n; i++){
+		var randNum = getRandomNumber(100);
+		num.push(randNum);
+	}
+
+	alert('Запомни числа и порядок ' + num);
+
+	var userAns = +prompt('Назови 1 число');
+	
+	compareAns(userAns, num[0])
+
+	userAns = +prompt('Назови последнее число');
+	compareAns(userAns, num[num.length - 1])
+	
+	var n = getRandomNumber(num.length - 1);
+	userAns = +prompt("Вспоминай " + (n + 1) + ' элимент');
+	compareAns(userAns, num[n])
+	
+
+</script>

@@ -1,0 +1,19 @@
+<meta charset="utf-8">
+<script type="text/javascript">
+	
+do{	
+		var sum = +prompt('Введи сумму ');
+		} 	while(isNaN(sum) || sum < 0);
+do{
+	var per = +prompt('Введи проценты ');
+		} 	while(isNaN(per) || per < 0);
+	var n = +prompt("Введи срок вклада");
+	var k = +prompt("Введи количесто начислений % за год")
+	var j = parseInt;
+	for(j = 0; j <= n; j++ ) {
+	var i = parseInt;
+		i = sum * Math.pow((1 + per / (k * 100)),j);
+		document.write("Сумма вклада =" + i.toFixed(2) + ' <br> ');
+		}
+		
+</script>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .timer{
+            text-align: center;
+            font-size: 70px;
+            color: rgb(255, 0, 234);
+            width: 500px;
+            background-color: rgba(0, 17, 255, 0.8);
+        }
+        .input-time{
+            text-align: center;
+            height: 30px;
+        }
+
+        .sub{
+            text-align: center;
+            height: 36px;
+            margin:0 50px 0 20px;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" placeholder="Введите время" class="input-time">
+    <input type="submit" class="sub" value="Принять">
+    <p class="timer"></p>
+    <script>
+        'use strict'
+
+        let inputTime = document.querySelector(".input-time");
+        let sub = document.querySelector(".sub");
+        let outputTime  = document.querySelector(".timer");
+
+        sub.addEventListener("click", () =>{
+            let inner = inputTime.value
+            outputTime.innerHTML = inner;
+            inputTime.value = "";
+            start();
+        })
+
+        let stopId = null;
+        function start(){stopId = setInterval(getTimer, 1000);}
+        
+
+
+        function getTimer(){
+            let timeArr = outputTime.innerHTML.split(":");
+            if(timeArr[2] > 0){
+                timeArr[2] -= 1;
+                timeArr[2] = timeArr[2].toString();
+                timeArr[1] = timeArr[1].toString();
+                timeArr[0] = timeArr[0].toString();
+            }
+            if(timeArr[2] < 10 & timeArr[2].length < 2){
+                outputTime.innerHTML = "";
+                timeArr[2] = "0" + timeArr[2].toString();
+            }
+            if(timeArr[1] < 10 & timeArr[1].length < 2){
+                outputTime.innerHTML = "";
+                timeArr[1] = "0" + timeArr[1].toString();
+            }
+            if(timeArr[0] < 10 & timeArr[0].length < 2){
+                outputTime.innerHTML = "";
+                timeArr[0] = "0" + timeArr[0].toString();
+            }
+            if(timeArr[2] == 0 & timeArr[1] > 0){
+                timeArr[2] = 59;
+                timeArr[1] -= 1;
+            }    
+            if(timeArr[1] == 0 & timeArr[2] == 0 & timeArr[0] > 0){
+                timeArr[2] = 59;
+                timeArr[1] = 59;
+                timeArr[0] -= 1
+                timeArr[0] = "0" + timeArr[0].toString();
+            }
+
+            outputTime.innerHTML = timeArr.join(":");
+
+            if(timeArr[0] == 0 & timeArr[1] == 0 & timeArr[2] == 0){
+                clearInterval(stopId);
+                alert("Время вышло")
+            }
+            return
+        }
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+#block1{
+    background-image: url(https://svopi.ru/uploads/posts/2016-08/thumbs/1470807795_image.jpeg);
+}
+#block2{
+    background-image: url(https://sp-slavaynochka.ru/files/893/893b68d1aea4dce90f8eae56f3c145e6.jpg);
+}
+#block3{
+    background-image: url(https://cache3.youla.io/files/images/780_780/5c/fb/5cfb69fff235023e846332f3.jpg);
+}
+#block4{
+    background-image: url(https://wanderlord.com/wp-content/uploads/2017/02/Grand-Canyon-5.jpg);
+}
+#block5{
+    background-image: url(https://static.travelconline.com/imagenes/northamerica/california/yosemite/pict2.jpg);
+}
+#block6{
+    background-image: url(https://posterline.biz/image/data/rasprodagi/40X50/360.jpg);
+}
+
+.slider-block{
+    color: #fff;
+    font-size: 60px;
+    position: relative;
+    border: 1px solid;
+    display: flex;
+    flex-direction: row;
+    width: 500px;
+    height: 400px;
+
+}
+
+
+.slider-item{
+    height: 400px;
+    transition: width .5s linear;
+}
+
+.button{
+    cursor: pointer;
+    position: absolute;
+    background-color: #FFF;
+    opacity: 0.6;
+    padding: 0;
+    box-sizing: border-box;
+    text-align: center;
+    font-size: 45px;
+}
+.left{
+    z-index: 3;
+    top: 180px;
+}
+
+.right{
+
+    left:480px;
+    top: 180px;
+}
+
+.right:hover{
+    background-color: #4b4a4d;
+    color: #fff;
+}
+
+.left:hover{
+    background-color: #4b4a4d;
+    color: #fff;
+}
