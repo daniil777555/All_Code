@@ -6,7 +6,7 @@
 */
 
 function BaeseFormul(Peh, Ph, Pefh, Pfh){
-	return (Peh * Ph)/((Peh * Ph) + (Pefh * Pfh));
+	return (Peh * Ph) / (Peh * Ph + Pefh * Pfh);
 }
 
-console.log(BaeseFormul(0.99, 0.89, 0.01, 0.11))
+console.log(BaeseFormul(0.99, (0.89 * 0.99), 0.01, (1 - (0.89 * 0.99))));

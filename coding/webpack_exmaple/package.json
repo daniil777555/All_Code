@@ -4,7 +4,7 @@
   "description": "slider",
   "main": "Main.js",
   "scripts": {
-    "build":"webpack --mode production"
+    "build": "webpack --mode production"
   },
   "author": "i",
   "license": "ISC",
